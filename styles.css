@@ -1,0 +1,84 @@
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+}
+/* * {
+  border: 1px solid gray;
+} */
+.abacus {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 0 auto;
+}
+.pebbles {
+  display: flex;
+}
+.counter_cols {
+  height: 50px;
+  display: flex;
+  /* Q: Can we use justify-content instead of flex-grow? */
+  /* justify-content: stretch; */
+}
+.counter {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+.pebbles_col {
+  flex-grow: 1;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+  background: skyblue;
+  /* SOLUTION 1 ? */
+  /* justify-content: flex-start; */
+  /* SOLUTION 2 */
+  justify-content: space-between;
+  position: relative;
+}
+.pebbles_col::before {
+  /* content: "BEFORE"; */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -0.5px;
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid black;		
+}
+/* .pebbles_col::after {
+  content: "AFTER";
+} */
+.top, .bottom {
+  z-index: 1;
+  border: 1px solid black;
+}
+.pebble {
+  width: 40px;
+  height: 20px;
+  background: black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+h1, h2 { text-align: center; }
+.bottom .pebble {
+  background: goldenrod;
+}
+.selected_number {
+  border: 1px solid gray;
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  cursor: pointer;
+}
